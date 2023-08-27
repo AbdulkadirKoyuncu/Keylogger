@@ -3,7 +3,7 @@ import socket
 
 def send_email(subject, body, to_email):
     from_email = 'Write the address to send the mails'
-    password = ''
+    password = 'Write the password for the e-mail account'
     body = str(body)
     email_text = f"Subject: {subject}\n\n{body}"
     
